@@ -1,0 +1,10 @@
+function getRate() {
+	fetch('https://api.coindesk.com/v1/bpi/currentprice.json').then(res=>res.json())
+	.then((out) => {
+		usd = out.bpi.USD.rate;
+		dataUsd = Data.parse(out.time.updated);
+		console.log('usd:', usd);
+		console.log('dateUsd:', dateUsd);
+	});
+}
+getRate();
