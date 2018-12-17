@@ -1,0 +1,21 @@
+alert("hello");
+
+$(document).ready(function(){
+	getRate();
+
+	
+});
+function getRate() {
+	//https://api.coindesk.com/v1/bpi/currentprice.json
+	$.get(
+		"https://api.coindesk.com/v1/bpi/currentprice.json",
+		function(data){
+			data = JSON.parse(data);
+			console.log(data);
+			
+		}
+	);
+}
+
+var usd = getRate();
+document.write(usd);
