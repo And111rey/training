@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-9">
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    </head>
+
+
+    <body>
+
+        <div id="content"></div>
+
+        <script>
+            var h1 = React.createElement('h2', null, 'Hello from react');// создание переменной которую будем помещать
+            var h3 = React.createElement('div', null, "wow");
+            var h2 = React.createElement('h3', null, "ok, it is good");
+
+            class Helloworld extends React.Component{
+                render (){
+                    return React.createElement('', null, "hello my " + this.props.petName);
+                }
+            }
+
+            ReactDOM.render(
+                React.createElement(Helloworld, {
+                    id: 'dog',
+                    petName: 'Helga',
+                    dogType: 'taksa'
+                }), 
+                React.createElement(Helloworld, {
+                    id: 'cat',
+                    petName: 'Kitty',
+                    dogType: 'sfincs'
+                }), 
+                React.createElement(Helloworld, {
+                    id: 'rabbit',
+                    petName: 'Jack',
+                    dogType: 'normal'
+                }), 
+                document.getElementById('content')
+            )
+        </script>
+
+    </body>
+</html>
